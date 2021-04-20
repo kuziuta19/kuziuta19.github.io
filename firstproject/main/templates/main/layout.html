@@ -14,8 +14,12 @@
 <body>
     <aside>
         <img src="{% static 'main/img/logos.jpg'%}" alt="Лого">
-        <span class="logo"></span>
+        <span class="logo"></span><br>
+        <span>
+        Добро пожаловать <br>
+        {{user.username}}</span>
         <h3>Навигация</h3>
+
         <ul>
             <a href="{% url 'home' %}"><li><i class="fas fa-home"></i> Главная</li></a>
             <a href="{% url 'about' %}"><li><i class="fas fa-address-card"></i> Про нас</li></a>

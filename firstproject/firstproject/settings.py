@@ -93,6 +93,7 @@ AUTHENTICATION_BACKENDS = (
 )
 
 
+
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
@@ -143,4 +144,8 @@ STATICFILES_DIRS=[
 
 SITE_ID = 1
 #
-LOGIN_REDIRECT_URL = '/'
+
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS =1
+ACCOUNT_USERNAME_MIN_LENGTH =4
+LOGIN_REDIRECT_URL = "/"
+EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
