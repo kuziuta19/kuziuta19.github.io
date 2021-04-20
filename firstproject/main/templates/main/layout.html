@@ -10,14 +10,28 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
     <link rel="stylesheet" href="{% static 'main/css/main.css'%}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="{% static 'main/styles/style.css'%}">
 </head>
+<header>
+	<div class="container">
+		<div class="heading clearfix">
+<img src="{% static 'main/pictures/logo2.png'%}" alt="{{user.username}}" class="logo">
+<nav>
+	<ul class="menu">
+    <li>
+    Добро пожаловать:
+			<a >{{user.username}}</a>
+		</li>
+	</ul>
+</nav>
+
+</header>
 <body>
     <aside>
         <img src="{% static 'main/img/logos.jpg'%}" alt="Лого">
         <span class="logo"></span><br>
-        <span>
-        Добро пожаловать <br>
-        {{user.username}}</span>
+        <span> <br>
+        </span>
         <h3>Навигация</h3>
 
         <ul>

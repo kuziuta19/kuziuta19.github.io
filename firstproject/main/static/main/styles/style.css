@@ -1,0 +1,238 @@
+body{
+	/*обнуление отступов*/
+	padding:0;
+	margin:0;
+	font-family:Arial,sans-serif;
+}
+/*при паддинге не деформировать чтобы свойства width и height задавали размеры не контента, а размеры блока.*/
+div{
+	box-sizing:border-box;
+}
+/*чтобы заголовок был внизу*/
+.clearfix:after{
+	content:'';
+	display:table;
+	width:100%;
+	clear:both;
+}
+header{	
+	 background-image: url(../pictures/screen.jpg);
+	 background-repeat: no-repeat;
+	 background-position: center top;
+	 background-size:cover;
+	padding-bottom:157px;
+}
+.container{
+	width:930px;
+	margin:0 auto;
+}
+.logo{
+	width:70px;
+	height:70px;
+	margin-top:41px;
+	float:left;
+}
+.menu{
+	padding:0;
+	margin:0;
+	display:block;
+}
+.menu li{
+	float:left;
+	display:block;
+	/*расстояние между элементами меню*/
+	margin-right:40px;
+	font-size:14px;
+	
+}
+.menu li a{
+color:white;
+text-decoration:none;/*убрать подчеркивание у ссылок*/
+text-transform:uppercase;
+}
+/*контейнер меню*/
+nav{
+	float:right;
+	margin-top:40px;
+}
+
+h5{
+	 color:white;
+	font-size:18px;
+	text-align:center;
+	margin:15px;
+}
+h1{
+     color:white;
+	font-size:67px;
+	text-align:center;
+	margin:10px;
+}
+.button{
+background:white;
+ color:#392c3e;
+border-radius:3px;
+display:block;
+width:176px;
+padding:20px 5px;/*справа 20 снизу сверху 5*/
+margin :0 auto;
+text-decoration:none;
+text-align:center;
+text-transform:uppercase;
+font-weight:bold;/*жирный шрифт*/
+font-size:16px;
+margin-top:30px;
+}
+.title{
+   padding-top:70px;
+}
+.title h3{
+    font-size: 35px;
+    text-align:center;
+    text-transform:uppercase;
+    color:#2d221c;
+     margin:0;
+  
+}
+
+.title p{
+    font-size: 16px;
+    text-align:center;
+    color:#736960;
+    margin-top:17px;
+}
+.skills{
+    margin-top: 8px;
+}
+hr{
+   width:160px;
+    background-color:#9c938a; 
+    color: #9c938a; 
+    height: 1,4px; 
+}
+.skill{
+  text-align:center;
+    width:270px;
+    float:left;
+}
+#MySkills{
+    padding-bottom: 90px;
+}
+.skill h3{
+     font-size: 21px;
+     font-weight: bold;
+    text-align:center;
+    color:#392c3e;
+    text-transform:uppercase;
+    margin-bottom:0;
+    
+}
+
+.skill p{
+     font-size: 15px;
+    text-align:center;
+    color:#9c938a;
+    margin-top:13px;
+    line-height: 1.5em;
+}
+.icon{
+    width:90px;
+    height:90px;
+    text-align:center;
+}
+
+.skill:last-child{/*в списке склиллов обратиться к последнему блоку*/
+    float:right;
+   
+}
+.skill:nth-child(2){/*в списке склиллов обратиться ко 2 блоку*/
+    margin-left:50px;
+   
+}
+#services{
+ background:#edf1fc;
+    padding-bottom: 110px;
+}
+
+.works{
+    margin-top:67px;
+    
+}
+.works img{
+   
+   float:left;
+    width:249px;
+    height:180px;
+  
+        
+}
+.works img:last-child{
+    float:right;
+}
+.works img:nth-child(2){
+    margin-left:110px;
+}
+footer{
+     background-color:#221d19;
+    	
+}
+#rights{
+  /*  text-align: center;*/
+     font-size: 13px;
+    margin-top: 20px;
+     color: #9c938a; 
+    
+}
+
+#socials img{
+    width:45px;
+    height: 45px;
+    margin-top: 10px;
+    margin-bottom: 0;
+    color: #9c938a; 
+}
+.PersonInfo img{
+    width:309px;
+    height:390px;
+    float:left;
+    
+}
+.Projects p{
+    font-size: 16px;
+      line-height: 1.5em;
+    color: #9c938a; 
+      text-align:center;
+     
+}
+.PersonInfo p{
+
+    padding-top: 90px;
+  font-size: 16px;
+      line-height: 1.5em;
+    color: #9c938a; 
+    text-align:center;
+    
+}
+#MyPortfolio{
+     background-image: url(../pictures/background.jpg);
+	 background-repeat: no-repeat;
+	 background-position: center top;
+	 background-size:cover;
+	padding-bottom:90px;
+    padding-top: 0;
+}
+
+
+.Projects img{
+      width:230px;
+    height:250px;
+     float:left;
+    padding-bottom: 90px;
+    padding-top: 50px;
+}
+.Projects img:last-child{
+    float:right;
+}
+.Projects img:nth-child(2){
+    padding-right: 100px;
+}
