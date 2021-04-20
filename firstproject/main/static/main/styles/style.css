@@ -75,7 +75,7 @@ border-radius:3px;
 display:block;
 width:176px;
 padding:20px 5px;/*справа 20 снизу сверху 5*/
-margin :0 auto;
+margin: 0 auto;
 text-decoration:none;
 text-align:center;
 text-transform:uppercase;
@@ -108,7 +108,7 @@ hr{
    width:160px;
     background-color:#9c938a; 
     color: #9c938a; 
-    height: 1,4px; 
+    height: 1.4px;
 }
 .skill{
   text-align:center;
