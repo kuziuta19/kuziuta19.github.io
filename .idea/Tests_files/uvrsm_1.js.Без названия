@@ -1,0 +1,148 @@
+$(document).ready(function() {
+
+	$("div[name='div_kurs']").hide();
+	$("#hide_this").hide();			
+	$('div.vypusk input').removeAttr('required');
+	$('.lv_true').change(function() {
+		var id_q = $(this).attr('id');
+		var checked = $('#'+id_q).attr('checked');
+		if(checked == 'checked')
+		{
+			$('input.'+id_q).removeAttr('required');
+			$('#'+id_q+'.lv_true').removeAttr('checked');
+			$('div.'+id_q).hide();
+		}
+		else
+		{
+			$('#'+id_q+'.lv_true').attr('checked', 'checked');
+			$('input.'+id_q).attr('required');
+			$('div.'+id_q).show();
+		}
+		
+	});
+		
+	$('.pol').click(function() {
+		var pol = $(this).val();
+		$(".for_pol").hide();
+		$('.for_pol').removeAttr('required');
+		$(".for_pol"+pol).attr('required');
+		$(".for_pol"+pol).show();
+	});
+})
+
+function save_uvrsm_1() {
+
+	var pol = $('input:checked[name="pol"]').val();
+	var vozrast_text = $("#vozrast").val();
+	var splt = vozrast_text.split(/[.]/);
+	// var vozrast_splt=splt[2]+'-'+splt[1]+'-'+splt[0];
+	// var vozrast = new Date(vozrast_splt);
+	// var vozrast_ot = new Date("1970-01-01");
+	// var vozrast_do = new Date("2016-01-01");
+	var vozrast = splt[2]+splt[1]+splt[0];
+	var vozrast_ot = 19700101;
+	var vozrast_do = 20181231;
+     var values = {};
+
+    $('input:radio').each(function () {
+        var $this = $(this),
+            name = $this.attr('name'),
+            value = $this.val();
+
+        if ($this.prop('checked')) {
+            values[name] = value;
+        }
+
+    });
+
+    $('input:text').each(function () {
+        var $this = $(this),
+            name = $this.attr('name'),
+            value = $this.val();
+
+        if ($this.val()) {
+            values[name] = value;
+        }
+
+    });
+
+    var ret = false;
+
+    $('input[required]').each(function(){
+    	var $this = $(this);
+    	var name = $this.attr('name');
+    	switch ($this.attr('type')){
+    		case 'radio':
+    			if (!$("input[name="+name+"]:checked").val() && $this.is(':visible')){
+    				console.log(name);
+    				ret = true;
+    				return false;
+    			}
+    		break;
+    		case 'text':
+                if (!$this.val() && $this.is(':visible')){
+    				ret = true;
+    				return false;
+                }
+    		break;
+    	}
+    });
+
+    if (ret) {
+   		alert('Проверьте правильность ввода данных. ');
+
+	    $('input:radio').each(function () {
+	        var $this = $(this),
+	            name = $this.attr('name');
+
+	        radio_prov(name);
+	    });
+
+        $('input:text[required]').each(function () {
+	        var $this = $(this),
+	            name = $this.attr('name');
+
+	        text_prov(name);
+	    });
+
+    	return false;
+    }
+
+	// var curr_date = vozrast.getDate();
+
+	// var curr_month = vozrast.getMonth() + 1;
+
+	// var curr_year = vozrast.getFullYear();
+
+	// var formated_vozrast=curr_date+"."+curr_month+"."+curr_year;
+
+	if ((vozrast>vozrast_ot) && (vozrast<vozrast_do)) {		
+
+		$.ajax({
+     		method: "POST",
+			url: "/tests/index.php?id=23",
+			//url: "/quests/uvrsm_1/uvrsm_1.php",
+			async: false,
+			data: {info: values, postback: 1},
+			timeout: 120000,					
+			cache: false,
+			success: function(msg)
+			{
+				console.log(msg);
+			}
+		});   
+
+		alert('Cпасибо, Ваш ответ принят.');
+
+		//document.location.href = "/tests/?id=24";
+		document.location.href = "/";
+	} else {
+   		alert('Проверьте правильность ввода данных: возраст');
+	}
+
+}	
+
+function validate_float(inp) {
+   inp.value = inp.value.replace(/[^0123456789.]/g, '.')//;
+						.replace(/[..]/g, '.')
+}

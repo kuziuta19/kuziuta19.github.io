@@ -14,5 +14,14 @@ def index(request):
     }
     return render(request, 'main/index.html', data)
 
+
 def about(request):
-    return render(request, 'main/about.html')
+    return render(request, 'main/html/index.html')
+
+
+def page2(request):
+    return render(request, 'main/html/page2.html')
+
+
+def page3(request):
+    return render(request, 'main/html/page3.html')

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <link rel="stylesheet" type="text/css" href="../../../static/main/styles/style.css"/>
+<meta charset ="UTF-8">
+<title>My site</title>
+    
+</head>
+<body>
+<header>
+	<div class="container">
+		<div class="heading clearfix">
+<img src="../../../static/main/pictures/logo2.png" alt="Vladislav Kuziuta" class="logo">
+<nav>
+	<ul class="menu">
+		<li>
+			<a href='#header'>Home</a>
+		</li>
+		<li>  
+            <a href='#MySkills'>Skills</a>
+		</li>
+		<li>
+			<a href='#services'>Services</a>
+		</li>
+		<li>
+			<a href="{% url 'page2' %}">Portfolio</a>
+		</li>
+        <li>
+			<a href="{% url 'page3' %}">Projects</a>
+		</li>
+	</ul>
+</nav>
+		</div>
+<div class="titles">
+<h5>Hello,My name is Vladislav Kuziuta and I am</h5>
+<h1>Full stack developer</h1>
+   <h5>Welcome to my portfolio.</h5> 
+	</div>
+	<a class="button" href="{% url 'page2' %}">more</a>
+    </div>
+</header>
+<section id="MySkills">
+<div class="container">
+<div class="title">
+   
+    <h3>
+       Skills
+    </h3>
+    <hr>
+    <p>I am inspired by creating great work with people who are as passionate as I am about building something awesome. </p>
+</div>
+    <div class="skills clearfix">
+        
+         <div class="skill">
+              <h4>C++</h4>
+             <img src="../../../static/main/pictures/c++2.png" alt="c++" class="icon">
+                   <p>C++ is a statically-typed, free-form, compiled, multi-paradigm, intermediate-level general-purpose middle-level programming language  </p>
+        </div>
+        
+        <div class="skill">
+              <h4>.NET</h4>
+            <img src="../../../static/main/pictures/csharp.png" alt="c#" class="icon">
+              <p>C# is a general-purpose, multi-paradigm programming language encompassing strong typing, imperative, declarative, functional, generic, object-oriented programming disciplines.   </p>
+        </div>
+        
+        <div class="skill">
+              <h4>Java</h4>
+            <img src="../../../static/main/pictures/java.png" alt="java" class="icon">
+              <p>Java is a general-purpose computer-programming language that is object-oriented,and specifically designed to have as few implementation dependencies as possible.</p>
+        </div>
+        </div>
+    </div>
+</section>
+    
+        <section id="services">
+<div class="container">
+    <div class="title">
+    <h3>
+       Services
+    </h3>
+    <hr>
+    <p>No one lights a lamp in order to hide it behind the door: the purpose of light is to create more light, to open people’s eyes, to reveal the marvels around. </p>
+</div>
+    <div class="works clearfix">
+          <img src="../../../static/main/pictures/web.png" alt="web" >
+          <img src="../../../static/main/pictures/desktop.jpg" alt="desktop" >
+          <img src="../../../static/main/pictures/and.png" alt="android">
+    </div>
+    
+         </div>
+</section>
+        
+  <footer>
+<div class="container">
+<div id="socials">
+    <a href="https://vk.com/vlad_kuzuta_19" title="Vkontakte" tagret="_blank">
+          <img src="../../../static/main/pictures/vk.png" alt="vk" ></a>
+    <a href="https://www.facebook.com/" title="facebook" tagret="_blank">
+          <img src="../../../static/main/pictures/facebook-128.png" alt="facebook"></a>
+    <a href="https://twitter.com/?lang=ru" title="twitter" tagret="_blank">
+          <img src="../../../static/main/pictures/twitter-128.png" alt="twitter"></a>
+    </div>
+ <div id="rights">&copy; 2021 Vladislav Kuziuta
+    </div>
+</div>
+</footer>
+   
+    
+</body>
+</html>
