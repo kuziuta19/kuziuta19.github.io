@@ -15,6 +15,7 @@
 
                      </h3>
                      {{el.anons}}
+                    <a href="{% url 'news_detail' el.id %}" class="btn btn-warning">Читать больше</a>
                  </div>
              {% endfor %}
         {% else %}
